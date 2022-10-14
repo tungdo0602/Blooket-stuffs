@@ -6,3 +6,6 @@ function maxCardStats(){
     }
     return getStateNode().setState({myCards: myCards})
 }
+function maxHealth(){
+    return getStateNode().setState({myLife: Number.MAX_VALUE})
+}
