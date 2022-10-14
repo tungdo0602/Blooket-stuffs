@@ -1,5 +1,13 @@
 # Blooket-stuffs
 ## Get stateNode
 ```js
-let getStateNode = (p) => {if(p){{for(let i of Object.values(document.querySelector("#app>div>div"))[1].children.filter(n=>n)){if(i._owner&&i._owner.stateNode[p])return i._owner.stateNode[p]}}}else{return Object.values(document.querySelector("#app>div>div"))[1].children.filter(n=>n)}}
+function getStateNode(){
+    for(let i of Object.keys(document.querySelector("#app>div>div"))){
+        if(i.toString().includes("__reactEventHandlers")){
+            for(let p of Object.values(document.querySelector("#app>div>div")[i].children.filter(n=>n))){
+                if(p._owner&&p._owner.stateNode)return p._owner.stateNode
+            }
+        }
+    }
+}
 ```
