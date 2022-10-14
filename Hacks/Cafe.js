@@ -5,3 +5,4 @@ for(let i of Object.values(getStateNode().state.foods)){
     i.stock = Number.MAX_VALUE
 }
 }
+function setDay(amount){return getStateNode().setState({day: amount})}
