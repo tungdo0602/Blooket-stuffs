@@ -1,1 +1,1 @@
-let autoClickAnswer = window.setInterval(()=>{try{document.querySelector("#q"+(getStateNode()[0]._owner.stateNode.state.question.answers.indexOf(getStateNode()[0]._owner.stateNode.state.question.correctAnswers.toString())+1)).click()}catch{}},100)
+let autoClickAnswer = window.setInterval(()=>{try{document.querySelector("#q"+(getStateNode().state.question.answers.indexOf(getStateNode().state.question.correctAnswers.toString())+1)).click()}catch{}},100)
