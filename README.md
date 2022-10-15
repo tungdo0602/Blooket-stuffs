@@ -12,3 +12,14 @@ function getStateNode(){
     }
 }
 ```
+
+## Bypass disable dommands
+#### Description: Bypass Some disable command like prompt() (important)
+```js
+function bypass(){
+    let _bypass = document.createElement("iframe");
+    _bypass.style.display = 'none';
+    document.body.appendChild(_bypass);
+    return {window: _bypass.contentWindow, document: _bypass.contentDocument}
+}
+```
