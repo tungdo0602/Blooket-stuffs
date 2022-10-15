@@ -1,5 +1,6 @@
 # Blooket-stuffs
 ## Get stateNode
+#### Description: Important function to execute most of code here.
 ```js
 function getStateNode(){
     for(let i of Object.keys(document.querySelector("#app>div>div"))){
