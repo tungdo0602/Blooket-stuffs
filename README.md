@@ -37,3 +37,20 @@ Object.values(webpackJsonp.push([
     ],
 ]).cache)
 ```
+
+## FindByProp
+```js
+function findByProp(p){
+return Object.values(webpackJsonp.push([
+    [], {
+        ['']: (_, a, b) => {
+            a.cache = b.c
+        },
+    },
+    [
+        ['']
+    ],
+]).cache).find((x)=>{
+    if(x.exports&&x.exports.a&&x.exports.a[p])return x.exports.a
+}).exports.a}
+```
