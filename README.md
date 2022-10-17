@@ -23,3 +23,17 @@ function bypass(){
     return {window: _bypass.contentWindow, document: _bypass.contentDocument}
 }
 ```
+
+## Webpack
+```js
+Object.values(webpackJsonp.push([
+    [], {
+        ['']: (_, a, b) => {
+            a.cache = b.c
+        },
+    },
+    [
+        ['']
+    ],
+]).cache)
+```
