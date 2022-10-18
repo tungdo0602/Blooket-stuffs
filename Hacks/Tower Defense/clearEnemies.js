@@ -8,11 +8,5 @@
         }
     }
 }
-    window.setInterval(()=>{
-        try{
-      getStateNode().enemies = [];
-        }catch{
-            
-        }
-    },10)
+    getStateNode().enemies = [];
 })();
