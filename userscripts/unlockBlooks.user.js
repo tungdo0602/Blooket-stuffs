@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         Blooket lobby blook unlocker
+// @name         Blook Unlocker (Blooket)
 // @namespace    https://github.com/tungdo0602/Blooket-stuffs
 // @version      0.1
 // @description  Unlock all blooks on game lobby.
