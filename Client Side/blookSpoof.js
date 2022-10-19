@@ -9,10 +9,9 @@
         }
     }
 }
-let blooks = Object.values(webpackJsonp.push([[], { ['']: (_, a, b) => { a.cache = b.c }, }, [['']],]).cache).find(x=>x.exports?.a?.toString().includes('UFO')).exports.a.toString().split('"').filter(b => !(b.startsWith(';') || b.startsWith(':') || b.startsWith('function') || b.startsWith('}')))
-let dict = {}
-for(let i of Object.values(blooks)){
-    dict[i] = 1;
+let blooks = findByProp("Astronaut");
+for(let i of Object.keys(blooks)){
+    blooks[i]=1
 }
-getStateNode().setState({blookData: dict});
+getStateNode().setState({blookData: blooks});
 })();
