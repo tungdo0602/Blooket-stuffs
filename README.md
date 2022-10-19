@@ -92,3 +92,17 @@ return Object.values(webpackJsonp.push([
     if(x.exports&&x.exports.a&&x.exports.a[p])return x.exports.a
 }).exports.a}
 ```
+
+## How to debug function
+### To find some hack (like swap,...), you need to find it's set value and things. So you can do it by patch the function to it log value.
+#### Example
+```js
+if(!typeof oldsv){
+    const oldsv = getStateNode().props.liveGameController.setVal;
+}
+getStateNode().props.liveGameController.setVal = function(e,t){
+    console.log(e)
+    console.log(t)
+    return oldsv.apply(this, arguments)
+}
+```
