@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         Blooket Auto Claim Reward
+// @name         Blooket lobby blook unlocker
 // @namespace    https://github.com/tungdo0602/Blooket-stuffs
 // @version      0.1
-// @description  Auto add tokens and xp whenever you play blooket.
+// @description  Unlock all blooks on game lobby.
 // @author       tungdo0602 (https://github.com/tungdo0602)
 // @match        *://play.blooket.com/play/lobby
 // @icon         https://www.google.com/s2/favicons?domain=https://blooket.com/
