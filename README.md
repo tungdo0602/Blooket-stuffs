@@ -94,7 +94,7 @@ return Object.values(webpackJsonp.push([
 ```
 
 ## How to debug function
-### To find some hack (like swap,...), you need to find it's set value and things. So you can do it by patch the function to it log value.
+### To find some hack (like swap,...), you need to find it's set value and things. So you can do it by patch the function and force it log value.
 #### Example
 ```js
 if(!typeof oldsv){
