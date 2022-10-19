@@ -52,7 +52,8 @@ return Object.values(window.webpackJsonp.push([
     let l1 = window.setInterval(()=>{
         if(location.href.includes("/play/lobby")){
             getStateNode().state.unlocks = Object.keys(findByProp("Astronaut"));
+            getStateNode().forceUpdate();
     }
-    },10);
+    });
 })();
 })();
