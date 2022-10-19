@@ -14,5 +14,5 @@ window.setInterval(()=>{
     }catch {
         
     }
-},10);
+});
 })();
