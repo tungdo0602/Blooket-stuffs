@@ -9,6 +9,19 @@
         }
     }
 }
+function findByProp(p){
+return Object.values(webpackJsonp.push([
+    [], {
+        ['']: (_, a, b) => {
+            a.cache = b.c
+        },
+    },
+    [
+        ['']
+    ],
+]).cache).find((x)=>{
+    if(x.exports&&x.exports.a&&x.exports.a[p])return x.exports.a
+}).exports.a}
 let blooks = findByProp("Astronaut");
 for(let i of Object.keys(blooks)){
     blooks[i]=1
