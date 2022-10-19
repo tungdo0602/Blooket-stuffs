@@ -49,10 +49,13 @@ return Object.values(window.webpackJsonp.push([
             console.log("[Logger] Failed to add reward | " + res.status);
         }
     });
-    if(location.href.includes("/play/lobby")){
-        getStateNode().state.unlocks = Object.keys(findByProp("Astronaut"));
-        console.log("[Logger] Unlocked all blooks");
+    let l1 = window.setInterval(()=>{
+        if(location.href.includes("/play/lobby")){
+            getStateNode().state.unlocks = Object.keys(findByProp("Astronaut"));
+            getStateNode().forceUpdate();
+            console.log("[Logger] Unlocked all blooks");
+            window.clearInterval(l1);
     }
-    getStateNode().forceUpdate();
+    },10);
 })();
 })();
