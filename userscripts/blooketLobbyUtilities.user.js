@@ -10,7 +10,7 @@
 // @run-at       document-end
 // @supportURL   https://github.com/tungdo0602/Blooket-stuffs/issues
 // @license      MIT
-// @source       https://github.com/tungdo0602/Blooket-stuffs/blob/main/userscripts/autoClaimReward.user.js
+// @source       https://github.com/tungdo0602/Blooket-stuffs/blob/main/userscripts/blooketLobbyUtilities.user.js
 // ==/UserScript==
 
 (function() {
