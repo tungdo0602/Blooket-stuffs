@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Blooket Lobby Utilities
 // @namespace    https://github.com/tungdo0602/Blooket-stuffs
-// @version      0.1
+// @version      1.1
 // @description  Some Useful Blooket Hacks.
 // @author       tungdo0602 (https://github.com/tungdo0602)
 // @match        *://play.blooket.com/*
