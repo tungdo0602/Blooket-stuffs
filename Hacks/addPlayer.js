@@ -28,5 +28,5 @@ return Object.values(webpackJsonp.push([
 ]).cache).find((x)=>{
     if(x.exports&&x.exports.a&&x.exports.a[p])return x.exports.a
 }).exports.a}
-getStateNode().props.liveGameController.joinGame(bypass().window.prompt("Game Id?"), bypass().window.prompt("Player Name?"))
+getStateNode().props.liveGameController.joinGame(bypass().window.prompt("Game Id?") || getStateNode().props.liveGameController._liveGameCode, bypass().window.prompt("Player Name?"))
 })();
