@@ -1,3 +1,3 @@
 (function(){
-    document.querySelector("input").removeAttribute("maxLength")
+    Array.from(document.querySelectorAll("input")).map(n=>n.removeAttribute("maxLength"))
 })();
