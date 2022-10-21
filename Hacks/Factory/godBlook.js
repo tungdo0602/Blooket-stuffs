@@ -27,6 +27,6 @@ return Object.values(webpackJsonp.push([
 ]).cache).find((x)=>{
     if(x.exports&&x.exports.a&&x.exports.a[p])return x.exports.a
 }).exports.a}
-for(let i=0;i<8;i++){ getStateNode().state.blooks[i] = { "name": "Rainbow Astronaut", "color": "#000000", "class": "👨‍🦽", "rarity": "Chroma", "cash": [ 1e100, 1e100, 1e100, 1e100, 1e100 ], "time": [ 0.1, 0.1, 0.1, 0.1, 0.1 ], "price": [ 0, 0, 0, 0 ], "active": false, "level": 4, "bonus": 1.65 }}
+for(let i=0;i<8;i++){ getStateNode().state.blooks[i] = { "name": "Rainbow Astronaut", "color": "#000000", "class": "👨‍🦽", "rarity": "Mystical", "cash": [ 1e100, 1e100, 1e100, 1e100, 1e100 ], "time": [ 0.1, 0.1, 0.1, 0.1, 0.1 ], "price": [ 0, 0, 0, 0 ], "active": true, "level": 4, "bonus": 1.65 }}
 getStateNode().forceUpdate();
 })();
