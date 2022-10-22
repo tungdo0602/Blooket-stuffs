@@ -54,7 +54,7 @@
         tmr.setDate(tmr.getDate()+1);
         let ls = bypass().window.localStorage
         if(ls.getItem("nextReward")){
-            if(new Date().getDate()===ls.getItem("nextReward")){
+            if((new Date().getDate()).toString()===ls.getItem("nextReward")){
                 ls.setItem("nextReward", tmr.getDate());
                 return true;
             }else{
