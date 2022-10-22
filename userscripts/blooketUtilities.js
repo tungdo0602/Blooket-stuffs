@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         Blooket Utilities
+// @name         Blooket Lobby Utilities
 // @namespace    https://github.com/tungdo0602/Blooket-stuffs
 // @version      1.2
 // @description  Some Useful Blooket Hacks.
@@ -11,7 +11,7 @@
 // @run-at       document-end
 // @supportURL   https://github.com/tungdo0602/Blooket-stuffs/issues
 // @license      MIT
-// @source       https://github.com/tungdo0602/Blooket-stuffs/blob/main/userscripts/blooketLobbyUtilities.user.js
+// @source       https://github.com/tungdo0602/Blooket-stuffs/blob/main/userscripts/blooketUtilities.js
 // ==/UserScript==
 
 (function() {
