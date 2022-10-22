@@ -16,14 +16,6 @@
 
 (function() {
     'use strict';
-    if(!(typeof window.originalXMLOpen)){
-        originalXMLOpen = window.XMLHttpRequest.prototype.open;
-    }
-    window.XMLHttpRequest.prototype.open = function(){
-        if (!arguments[1].includes("suspend")){
-            originalXMLOpen.apply(this, arguments)
-        }
-    }
 (function(){
     function getStateNode(){
         for(let i of Object.keys(document.querySelector("#app>div>div"))){
