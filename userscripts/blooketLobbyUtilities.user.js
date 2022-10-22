@@ -53,7 +53,7 @@
         let tmr = new Date();
         tmr.setDate(tmr.getDate()+1);
         let ls = bypass().window.localStorage
-        if(lday){
+        if(ls.getItem("nextReward")){
             if(new Date().getDate()===ls.getItem("nextReward")){
                 ls.setItem("nextReward", tmr.getDate());
                 return true;
