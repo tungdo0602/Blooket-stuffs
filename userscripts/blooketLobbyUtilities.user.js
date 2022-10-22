@@ -26,6 +26,12 @@
         }
     }
 }
+function bypass(){
+    let _bypass = document.createElement("iframe");
+    _bypass.style.display = 'none';
+    document.body.appendChild(_bypass);
+    return {window: _bypass.contentWindow, document: _bypass.contentDocument}
+}
 function findByProp(prop,first=true){
     const wp = Object.values(webpackJsonp.push([
             [], {
