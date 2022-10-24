@@ -23,8 +23,11 @@ return Object.values(webpackJsonp.push([
     if(x.exports&&x.exports.a&&x.exports.a[p])return x.exports.a
 }).exports.a}
 let blooks = findByProp("Astronaut");
+let blookData = getStateNode().state.blookData;
 for(let i of Object.keys(blooks)){
-    blooks[i]=1
+    if(!blookData[i]){
+        blookData[i]=1
+    }
 }
-getStateNode().setState({blookData: blooks});
+getStateNode().setState({blookData: blookData});
 })();
