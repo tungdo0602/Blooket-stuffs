@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Blooket Utilities
 // @namespace    https://github.com/tungdo0602/Blooket-stuffs
-// @version      1.2.1
+// @version      1.2.2
 // @description  Some Useful Blooket Hacks.
 // @author       tungdo0602 (https://github.com/tungdo0602)
 // @match        *://*.blooket.com/*
@@ -49,38 +49,41 @@
             return wp.filter(x=>x.exports?.a&&x.exports?.a[prop]).map(n=>n.exports.a)
         }
     }
-    function checkTomorrow(){
-        let tmr = new Date();
-        tmr.setDate(tmr.getDate()+1);
-        let ls = bypass().window.localStorage
-        if(ls.getItem("nextReward")){
-            if((new Date().getDate())>=Number(ls.getItem("nextReward"))){
-                ls.setItem("nextReward", tmr.getDate());
-                return true;
-            }else{
-                return false;
-            }
-        }else{
-            ls.setItem("nextReward", tmr.getDate());
-            return true;
-        }
+    function addReward(){
+        return findByProp("put").put("https://play.blooket.com/api/users/add-rewards", {
+            addedTokens: 500,
+            addedXp: 500
+        }).then((res)=>{
+            return res.status;
+        });
     }
     if(location.host==="play.blooket.com"){
-        if(checkTomorrow()){
-            console.log("[Logger] You're not claim reward yet.");
-            findByProp("put").put("https://play.blooket.com/api/users/add-rewards", {
-                addedTokens: 500,
-                addedXp: 500
-            }).then((res)=>{
-                if(res.status==200){
-                    console.log("[Logger] Successfully to add reward | " + res.status);
+        let tmr = new Date();
+        tmr.setDate(tmr.getDate()+1);
+        let ls = bypass().window.localStorage;
+        findByProp("get").get("https://play.blooket.com/api/users/me").then(res=>{
+            if(res.data){
+                if(ls.getItem("nextReward")){
+                    if((new Date().getDate())>=Number(ls.getItem("nextReward"))){
+                        ls.setItem("nextReward", tmr.getDate());
+                        console.log("[Logger] You're not claim reward yet.");
+                        let reward = addReward();
+                        if(reward===200){
+                            console.log("[Logger] Successfully added reward | " + reward);
+                        }else{
+                            console.log("[Logger] Failed to add reward | " + reward);
+                        }
+                    }else{
+                        console.log("[Logger] You already claimed today.");
+                    }
                 }else{
-                    console.log("[Logger] Failed to add reward | " + res.status);
+                    ls.setItem("nextReward", tmr.getDate());
+                    addReward();
                 }
-            });
-        }else{
-            console.log("[Logger] You already claimed today.")
-        }
+            }else{
+                console.log("[Logger] You're not login yet.");
+            }
+        });
         window.setInterval(()=>{
             if(location.href.toLowerCase().includes("/lobby")){
                 getStateNode().state.unlocks = Object.keys(findByProp("Astronaut"));
