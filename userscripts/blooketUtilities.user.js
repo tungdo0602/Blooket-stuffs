@@ -92,6 +92,14 @@
                 Array.from(document.querySelectorAll("input")).map(n=>n.removeAttribute("maxLength"));
             }
         });
+    }else if(location.host==="dashboard.blooket.com"){
+        if(location.href.toLowerCase().includes("my-sets")){
+            Array.from(document.querySelectorAll("div")).filter(x=>x.className.includes("FolderButton")).map(x=>x[Object.keys(x).filter(x=>x.includes("EventHandler"))]).map(x=>x.onClick=function(){
+                getStateNode().setState({
+                    creatingFolder: true
+                });
+            });
+        }
     }
 })();
 })();
