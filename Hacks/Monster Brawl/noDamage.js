@@ -32,5 +32,5 @@ if(first){
     return wp.filter(x=>x.exports?.a&&x.exports?.a[prop]).map(n=>n.exports.a)
 }
 }
-window.setInterval(()=>getStateNode().state.game.scene.children.list.filter(x=>x.dmg).map(e=>e.dmg=0));
+window.setInterval(()=>getStateNode().state.game.scene.children.list.filter(x=>x.dmg&&x.hp).map(e=>e.dmg=0));
 })();
