@@ -1,5 +1,5 @@
 # Blooket-stuffs
-## Note Before copy any script here:
+## Note Before use any script here for another place:
 #### 1. You should credit me in the script
 ## Things
 #### Userscript: https://greasyfork.org/en/scripts/453539-blooket-utilities
