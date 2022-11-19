@@ -73,7 +73,7 @@
                             }else{
                                 console.log("[Logger] Failed to add reward | " + reward);
                             }
-                        })
+                        });
                     }else{
                         console.log("[Logger] You already claimed today.");
                     }
