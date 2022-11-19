@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Blooket Utilities
 // @namespace    https://github.com/tungdo0602/Blooket-stuffs
-// @version      1.2.4
+// @version      1.2.5
 // @description  Some Useful Blooket Hacks.
 // @author       tungdo0602 (https://github.com/tungdo0602)
 // @match        *://*.blooket.com/*
@@ -67,12 +67,13 @@
                     if((new Date().getDate())>=Number(ls.getItem("nextReward"))){
                         ls.setItem("nextReward", tmr.getDate());
                         console.log("[Logger] You're not claim reward yet.");
-                        let reward = addReward();
-                        if(reward===200){
-                            console.log("[Logger] Successfully added reward | " + reward);
-                        }else{
-                            console.log("[Logger] Failed to add reward | " + reward);
-                        }
+                        addReward().then(e=>{
+                            if(e===200){
+                                console.log("[Logger] Successfully added reward | " + reward);
+                            }else{
+                                console.log("[Logger] Failed to add reward | " + reward);
+                            }
+                        })
                     }else{
                         console.log("[Logger] You already claimed today.");
                     }
