@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Blooket Utilities
 // @namespace    https://github.com/tungdo0602/Blooket-stuffs
-// @version      1.2.5
+// @version      1.2.6
 // @description  Some Useful Blooket Hacks.
 // @author       tungdo0602 (https://github.com/tungdo0602)
 // @match        *://*.blooket.com/*
@@ -69,9 +69,9 @@
                         console.log("[Logger] You're not claim reward yet.");
                         addReward().then(e=>{
                             if(e===200){
-                                console.log("[Logger] Successfully added reward | " + reward);
+                                console.log("[Logger] Successfully added reward | " + e);
                             }else{
-                                console.log("[Logger] Failed to add reward | " + reward);
+                                console.log("[Logger] Failed to add reward | " + e);
                             }
                         });
                     }else{
