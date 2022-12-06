@@ -45,4 +45,5 @@ function spamOpenBox(e){
             console.log("Not enough tokens!");
         }});
 }
+    spamOpenBox(boxName);
 })();
