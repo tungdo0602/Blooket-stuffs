@@ -36,6 +36,6 @@ getStateNode().props.user.data.plan = 'Plus Flex';
 getStateNode().state.isBen = getStateNode().state.plus = getStateNode().state.canPlusHost = true;
 getStateNode().forceUpdate();
 }else{
-    alert("You should run it when host a game.");
+    bypass().window.alert("You should run it when host a game.");
 }
 })();
