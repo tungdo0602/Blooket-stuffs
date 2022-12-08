@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Blooket Utilities
 // @namespace    https://github.com/tungdo0602/Blooket-stuffs
-// @version      1.2.6
+// @version      1.2.7
 // @description  Some Useful Blooket Hacks.
 // @author       tungdo0602 (https://github.com/tungdo0602)
 // @match        *://*.blooket.com/*
@@ -86,12 +86,17 @@
             }
         });
         window.setInterval(()=>{
-            if(location.href.toLowerCase().includes("/lobby")){
-                getStateNode().state.unlocks = Object.keys(findByProp("Astronaut"));
-                getStateNode().forceUpdate();
-            }else if(location.href.toLowerCase().includes("/register")){
-                Array.from(document.querySelectorAll("input")).map(n=>n.removeAttribute("maxLength"));
-            }
+            try{
+                if(location.href.toLowerCase().includes("/lobby")){
+                    getStateNode().state.unlocks = Object.keys(findByProp("Astronaut"));
+                }else if(location.href.toLowerCase().includes("/register")){
+                    Array.from(document.querySelectorAll("input")).map(n=>n.removeAttribute("maxLength"));
+                }else if(location.href.toLowerCase().includes("/host")){
+                    getStateNode().props.user.data.plan = 'Plus Flex';
+                    getStateNode().state.isBen = getStateNode().state.plus = getStateNode().state.canPlusHost = true;
+                }
+            }catch{}
+            getStateNode().forceUpdate();
         });
     }else if(location.host==="dashboard.blooket.com"){
         window.setInterval(()=>{
