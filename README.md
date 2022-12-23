@@ -1,6 +1,7 @@
 # Blooket-stuffs
 ## Note Before use any script here for another place:
 #### 1. You should credit me in the script
+#### 2. The template is for developing lol
 ## Things
 #### Userscript: https://greasyfork.org/en/scripts/453539-blooket-utilities
 ## Debug Stuffs
