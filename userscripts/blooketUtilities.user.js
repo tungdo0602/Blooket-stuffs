@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Blooket Utilities
 // @namespace    https://github.com/tungdo0602/Blooket-stuffs
-// @version      1.2.7
+// @version      1.2.8
 // @description  Some Useful Blooket Hacks.
 // @author       tungdo0602 (https://github.com/tungdo0602)
 // @match        *://*.blooket.com/*
@@ -50,11 +50,16 @@
         }
     }
     function addReward(){
-        return findByProp("put").put("https://play.blooket.com/api/users/add-rewards", {
-            addedTokens: 500,
-            addedXp: 500
-        }).then((res)=>{
-            return res.status;
+        return findByProp("post").post("https://play.blooket.com/api/playersessions/solo", {
+            gameMode: "Defense"
+        }).then(x=>{
+            return findByProp("put").put("https://play.blooket.com/api/users/add-rewards", {
+                addedTokens: 500,
+                addedXp: 500,
+                t: x.data.t
+            }).then((res)=>{
+                return res.status;
+            });
         });
     }
     if(location.host==="play.blooket.com"){
@@ -90,7 +95,7 @@
                 if(location.href.toLowerCase().includes("/lobby")){
                     getStateNode().state.unlocks = Object.keys(findByProp("Astronaut"));
                 }else if(location.href.toLowerCase().includes("/register")){
-                    Array.from(document.querySelectorAll("input")).map(n=>n.removeAttribute("maxLength"));
+                    Array.from(document.querySelectorAll("input")).map(n=>n.maxLength = 120);
                 }else if(location.href.toLowerCase().includes("/host")){
                     getStateNode().props.user.data.plan = 'Plus Flex';
                     getStateNode().state.isBen = getStateNode().state.plus = getStateNode().state.canPlusHost = true;
@@ -108,6 +113,11 @@
                 });
             }
         })
+    }
+    window["blooket"] = {
+        bypass: bypass,
+        getStateNode: getStateNode,
+        findByProp: findByProp,
     }
 })();
 })();
