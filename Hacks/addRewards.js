@@ -22,9 +22,13 @@ if(!location.host.includes("play.blooket.com")){
     bypass().window.alert("Redirect you to the correct page. Please paste the code again.");
     location.replace("https://play.blooket.com/play");
 }else{
+findByProp("post").post("https://play.blooket.com/api/playersessions/solo", {
+    gameMode: "Defense"
+}).then(x=>{
     findByProp("put").put("https://play.blooket.com/api/users/add-rewards", {
         addedTokens: 500,
-        addedXp: 500
+        addedXp: 500,
+        t: x.data.t
     }).then((res)=>{
         if(res.status==200){
             bypass().window.alert("Added max tokens and xp.")
@@ -32,5 +36,6 @@ if(!location.host.includes("play.blooket.com")){
             bypass().window.alert("Failed to add token and xp.")
         }
     });
+});
 }
 })();
