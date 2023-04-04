@@ -1,4 +1,5 @@
 # Blooket-stuffs
+# This project will give you functions to modify blooket so don't ask for hack script or fix script error...
 ## Note Before use any script here for another place:
 #### 1. You should credit me in the script
 #### 2. The template is for developing lol
