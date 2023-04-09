@@ -32,6 +32,17 @@ if(first){
     return wp.filter(x=>x.exports?.a&&x.exports?.a[prop]).map(n=>n.exports.a)
 }
 }
+
+window.setInterval(()=>{
+        if(!document.querySelector("#folderColorPicker")){
+            try{
+        document.querySelector("div[class*='colorsHolder']").innerHTML = `<input id="folderColorPicker" style="margin: 0 auto;" type="color">`
+document.querySelector("#folderColorPicker").onchange = function(e){
+    getStateNode().setState({folderColor: e.target.value})
+}
+            }catch{}
+    }
+    })
     Array.from(document.querySelectorAll("div")).filter(x=>x.className.includes("FolderButton")).map(x=>x[Object.keys(x).filter(x=>x.includes("EventHandler"))]).map(x=>x.onClick=function(){
     getStateNode().setState({
         creatingFolder: true
