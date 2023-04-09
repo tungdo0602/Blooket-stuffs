@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Blooket Utilities
 // @namespace    https://github.com/tungdo0602/Blooket-stuffs
-// @version      1.2.8
+// @version      1.2.9
 // @description  Some Useful Blooket Hacks.
 // @author       tungdo0602 (https://github.com/tungdo0602)
 // @match        *://*.blooket.com/*
@@ -106,6 +106,14 @@
     }else if(location.host==="dashboard.blooket.com"){
         window.setInterval(()=>{
             if(location.href.toLowerCase().includes("my-sets")){
+                if(!document.querySelector("#folderColorPicker")){
+                    try{
+                        document.querySelector("div[class*='colorsHolder']").innerHTML = `<input id="folderColorPicker" style="margin: 0 auto;" type="color">`
+                        document.querySelector("#folderColorPicker").onchange = function(e){
+                            getStateNode().setState({folderColor: e.target.value})
+                        }
+                    }catch{}
+                }
                 Array.from(document.querySelectorAll("div")).filter(x=>x.className.includes("FolderButton")).map(x=>x[Object.keys(x).filter(x=>x.includes("EventHandler"))]).map(x=>x.onClick=function(){
                     getStateNode().setState({
                         creatingFolder: true
