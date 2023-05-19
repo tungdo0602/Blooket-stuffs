@@ -10,7 +10,7 @@ function getStateNode(){
 }
 window.setInterval(()=>{
     try{
-        document.querySelector("#answer"+getStateNode().props.client.question.answers.indexOf(getStateNode().props.client.question.correctAnswers[0])).click()
+        document.querySelector("#answer"+getStateNode().props.client.question.answers.indexOf(getStateNode().props.client.question.correctAnswers[0]) + " > div > div").click()
     }catch {
         
     }
