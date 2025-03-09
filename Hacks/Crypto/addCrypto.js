@@ -1,12 +1,6 @@
 (function(){
- function getStateNode(){
-    for(let i of Object.keys(document.querySelector("#app>div>div"))){
-        if(i.toString().includes("__reactEventHandlers")){
-            for(let p of Object.values(document.querySelector("#app>div>div")[i].children.filter(n=>n))){
-                if(p._owner&&p._owner.stateNode)return p._owner.stateNode
-            }
-        }
-    }
+function getStateNode() {
+    return Object.values(document.querySelector("#app>div>div")).find(e=>e.children).children.find(m=>m._owner&&m._owner.stateNode)._owner.stateNode;
 }
 function bypass(){
     let _bypass = document.createElement("iframe");
@@ -14,7 +8,7 @@ function bypass(){
     document.body.appendChild(_bypass);
     return {window: _bypass.contentWindow, document: _bypass.contentDocument}
 }
-cpt = Number(bypass().window.prompt("Crypto"))
+let cpt = Number(bypass().window.prompt("Crypto"))
 getStateNode().setState({crypto: cpt, crypto2: cpt})
 bypass().window.alert("Added Crypto")
 })();
