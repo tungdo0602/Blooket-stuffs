@@ -8,14 +8,15 @@ function bypass(){
     document.body.appendChild(_bypass);
     return {window: _bypass.contentWindow, document: _bypass.contentDocument}
 }
-let cryptoA = bypass().window.prompt("Crypto Amount")
+let plname = bypass().window.prompt("Player name")
+let cryptoA = bypass().window.prompt("Crypto amount (blank for fun)")
 getStateNode().props.liveGameController.setVal({
     path: "c/" + getStateNode().props.client.name,
     val: {
         b: getStateNode().props.client.blook,
         cr: getStateNode().state.crypto,
-        p: getStateNode().hackingPlayer.password,
-        tat: getStateNode().hackingPlayer.name + ":-" + cryptoA
+        p: getStateNode().state.password,
+        tat: plname + ":" + (cryptoA ? -cryptoA : Number.MAX_SAFE_INTEGER)
     }
 });
 })();
